@@ -1,5 +1,5 @@
-#PSYC 259 Homework 2 - Data Transformation
-#For full credit, provide answers for at least 7/10
+#PSYC 259 Homework 3 - Data Transformation
+#For full credit, provide answers for at least 7/11
 
 #List names of students collaborating with: 
 
@@ -8,12 +8,12 @@
 #Load packages
 library(tidyverse)
 ds <- read_csv("data_raw/rolling_stone_500.csv")
-  
+
 ### Question 1 ---------- 
 
-#Use glimpse to check the type of "Year". 
-#Then, convert it to a numeric, saving it back to 'ds'
-#Use typeof to check that your conversion succeeded
+#Use a function to check the class of all of the variables in 'ds' 
+#Convert "Year" to a numeric, saving it back to 'ds'
+#Use a function to check that your conversion succeeded
 
 #ANSWER
 
@@ -25,19 +25,22 @@ ds <- read_csv("data_raw/rolling_stone_500.csv")
 
 #ANSWER
 
+
 ### Question 3 ----------
 
 # Use mutate to create a new variable in ds that has the decade of the year as a number
 # For example, 1971 would become 1970, 2001 would become 2000
-# Hint: read the documentation for ?floor
+# Hint: read the documentation for ?floor and make sure year is numeric (from Question 1)
 
 #ANSWER
+
 
 ### Question 4 ----------
 
 # Sort the dataset by rank so that 1 is at the top
 
 #ANSWER
+
 
 ### Question 5 ----------
 
@@ -47,28 +50,32 @@ ds <- read_csv("data_raw/rolling_stone_500.csv")
 #ANSWER
 
 
+
 ### Question 6 ----------
 
 # Use summarize to find the earliest, most recent, and average release year
-# of all songs on the full list. Save it to a new tibble called "ds_sum"
+# and save the results to a new tibble called "ds_sum"
+# Hint, the function drop_na() might help. Read ?drop_na
 
 #ANSWER
 
 
 ### Question 7 ----------
 
-# Use filter to find out the artists/song titles for the earliest, most 
-# recent, and average-ist years in the data set (the values obtained in Q6). 
+# Use filter on the original dataset 'ds' to find all of the artists/song titles from 
+# the min/max/mean years that you identified in 'ds_sum'
 # Use one filter command only, and sort the responses by year
+# Bonus: find a way to do it without hard coding the years (i.e. pull them from ds_sum)
+# (this might take some searching to find functions that will help)
 
 #ANSWER
 
 
 ### Question 8 ---------- 
 
-# There's and error here. The oldest song "Brass in Pocket"
-# is from 1979! Use mutate and ifelse to fix the error, 
-# recalculate decade, and then
+# There's an error here. The oldest song "Brass in Pocket"
+# is from 1979! Use mutate and ifelse to fix the error in 'ds'
+# then recalculate decade, and then
 # recalculate the responses from Questions 6-7 to
 # find the correct oldest, averag-ist, and most recent songs
 
@@ -92,7 +99,10 @@ ds <- read_csv("data_raw/rolling_stone_500.csv")
 # Use it to count up the number of songs by decade
 # Then use slice_max() to pull the row with the most songs
 # Use the pipe %>% to string the commands together
+# Check against your answers from Question 9 to make sure it matches
 
 #ANSWER
 
-  
+
+### Question 11 ------
+# Use RStudio's styler to style all the code in your homework
